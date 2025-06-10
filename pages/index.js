@@ -47,6 +47,7 @@ addTodoForm.addEventListener("submit", (evt) => {
   const values = { name, date, id };
   const todo = generateTodo(values);
   todosList.append(todo);
+  todoFormValidator.resetValidation();
   closeModal(addTodoPopup);
 });
 
@@ -58,3 +59,5 @@ initialTodos.forEach((item) => {
 const todoFormValidator = new FormValidator(validationConfig, addTodoForm);
 
 todoFormValidator.enableValidation();
+
+// wanted to submit README.md after the first review.

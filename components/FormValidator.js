@@ -50,6 +50,14 @@ class FormValidator {
     }
   }
 
+  resetValidation() {
+    this._formEl.reset();
+    this._inputList.forEach((inputElement) => {
+      this._hideInputError(inputElement);
+    });
+    this._toggleButtonState();
+  }
+
   _setEventListeners() {
     this._inputList = Array.from(
       this._formEl.querySelectorAll(this._inputSelector)
