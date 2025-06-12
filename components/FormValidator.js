@@ -38,15 +38,12 @@ class FormValidator {
   }
 
   _toggleButtonState() {
-    const buttonElement = this._formEl.querySelector(
-      this._submitButtonSelector
-    );
     if (this._hasInvalidInput()) {
-      buttonElement.classList.add(this._inactiveButtonClass);
-      buttonElement.disabled = true;
+      this._submitButton.classList.add(this._inactiveButtonClass);
+      this._submitButton.disabled = true;
     } else {
-      buttonElement.classList.remove(this._inactiveButtonClass);
-      buttonElement.disabled = false;
+      this._submitButton.classList.remove(this._inactiveButtonClass);
+      this._submitButton.disabled = false;
     }
   }
 
@@ -62,9 +59,8 @@ class FormValidator {
     this._inputList = Array.from(
       this._formEl.querySelectorAll(this._inputSelector)
     );
-    const buttonElement = this._formEl.querySelector(
-      this._submitButtonSelector
-    );
+
+    this._submitButton = this._formEl.querySelector(this._submitButtonSelector);
 
     this._toggleButtonState();
 
