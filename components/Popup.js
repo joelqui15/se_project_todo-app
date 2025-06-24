@@ -6,8 +6,8 @@ class Popup {
   // Method to handle the Escape key press to close the popup
   _handleEscapeClose(evt) {
     if (evt.key === "Escape") {
-      const PopupEl = document.querySelector(".popup_visible");
-      if (PopupEl) {
+      const popupEl = document.querySelector(".popup_visible");
+      if (popupEl) {
         this.close();
       }
     }
