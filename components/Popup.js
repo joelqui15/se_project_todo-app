@@ -16,16 +16,12 @@ class Popup {
   // Method to open the popup
   open() {
     this._popupElement.classList.add("popup_visible");
-    document.addEventListener("keyup", (evt) => {
-      this._handleEscapeClose(evt);
-    });
+    document.addEventListener("keyup", this._handleEscapeClose);
   }
   // Function to handle closing the popup when the Escape key is pressed
   close() {
     this._popupElement.classList.remove("popup_visible");
-    document.removeEventListener("keyup", (evt) => {
-      this._handleEscapeClose(evt);
-    });
+    document.removeEventListener("keyup", this._handleEscapeClose);
   }
 
   // Method to set event listeners for the popup
